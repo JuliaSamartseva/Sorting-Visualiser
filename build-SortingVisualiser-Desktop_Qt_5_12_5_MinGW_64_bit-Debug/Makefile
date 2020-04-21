@@ -218,6 +218,7 @@ Makefile: ../SortingVisualiser/SortingVisualiser.pro ../../../../Qt/5.12.5/mingw
 		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/resolve_config.prf \
 		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/exclusive_builds_post.prf \
 		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/default_post.prf \
+		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/win32/stl.prf \
 		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/qml_debug.prf \
 		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/precompile_header.prf \
 		../../../../Qt/5.12.5/mingw73_64/mkspecs/features/warn_on.prf \
@@ -394,6 +395,7 @@ Makefile: ../SortingVisualiser/SortingVisualiser.pro ../../../../Qt/5.12.5/mingw
 ../../../../Qt/5.12.5/mingw73_64/mkspecs/features/resolve_config.prf:
 ../../../../Qt/5.12.5/mingw73_64/mkspecs/features/exclusive_builds_post.prf:
 ../../../../Qt/5.12.5/mingw73_64/mkspecs/features/default_post.prf:
+../../../../Qt/5.12.5/mingw73_64/mkspecs/features/win32/stl.prf:
 ../../../../Qt/5.12.5/mingw73_64/mkspecs/features/qml_debug.prf:
 ../../../../Qt/5.12.5/mingw73_64/mkspecs/features/precompile_header.prf:
 ../../../../Qt/5.12.5/mingw73_64/mkspecs/features/warn_on.prf:
