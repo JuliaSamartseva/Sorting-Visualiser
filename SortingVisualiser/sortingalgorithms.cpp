@@ -14,7 +14,6 @@ void QuickSort::quickSort(std::vector<int> &list, unsigned int low, unsigned int
     unsigned int i = low;
     unsigned int j = high;
     int pivot = list[(i + j) / 2];
-    int temp;
 
     while (i <= j)
     {

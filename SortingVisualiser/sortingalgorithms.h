@@ -6,20 +6,21 @@ class SortingStrategy
 {
 public:
     virtual void sort(std::vector<int> &list) = 0;
+    virtual ~SortingStrategy() = 0;
 };
 
 class QuickSort : public SortingStrategy
 {
     void sort(std::vector<int> &list) override;
-    void quickSort(std::vector<int> &list, int low, int high);
+    void quickSort(std::vector<int> &list, unsigned int low, unsigned int high);
 
 };
 
 class MergeSort : public SortingStrategy
 {
     void sort(std::vector<int> &list) override;
-    void mergeSort(std::vector<int> &list, int left, int right);
-    void merge(std::vector<int> &list, int left, int middle, int right);
+    void mergeSort(std::vector<int> &list, unsigned int left, unsigned int right);
+    void merge(std::vector<int> &list, unsigned int left, unsigned int middle, unsigned int right);
 };
 
 class InsertionSort : public SortingStrategy
