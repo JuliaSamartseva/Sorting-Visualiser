@@ -17,6 +17,8 @@ class QuickSort : public SortingStrategy {
 
 class MergeSort : public SortingStrategy {
     void sort(std::vector<int> &list) override;
+    void mergeSort(std::vector<int> &list, int left, int right);
+    void merge(std::vector<int> &list, int left, int middle, int right);
 };
 
 class InsertionSort : public SortingStrategy {
