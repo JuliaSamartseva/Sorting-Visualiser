@@ -5,7 +5,6 @@
 class SortingStrategy
 {
 public:
-    SortingStrategy();
     virtual void sort(std::vector<int> &list) = 0;
 };
 
