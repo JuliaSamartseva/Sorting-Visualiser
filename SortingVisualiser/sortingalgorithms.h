@@ -6,27 +6,29 @@ class SortingStrategy
 {
 public:
     SortingStrategy();
-    virtual void sort(std::vector<int> list) = 0;
+    virtual void sort(std::vector<int> &list) = 0;
 };
 
 class QuickSort : public SortingStrategy {
-    void sort(std::vector<int> list) override;
+    void sort(std::vector<int> &list) override;
+    void quickSort(std::vector<int> &list, int low, int high);
+    int partition (std::vector<int> &list, int low, int high);
 };
 
 class MergeSort : public SortingStrategy {
-    void sort(std::vector<int> list) override;
+    void sort(std::vector<int> &list) override;
 };
 
 class InsertionSort : public SortingStrategy {
-    void sort(std::vector<int> list) override;
+    void sort(std::vector<int> &list) override;
 };
 
 class SelectionSort : public SortingStrategy {
-    void sort(std::vector<int> list) override;
+    void sort(std::vector<int> &list) override;
 };
 
 class CocktailSort : public SortingStrategy {
-    void sort(std::vector<int> list) override;
+    void sort(std::vector<int> &list) override;
 };
 
 class SortingContext {
@@ -43,10 +45,10 @@ public:
         return strategy;
     }
 
-    public void sortNumbers(std::vector<int> numbers){
+   void sortNumbers(std::vector<int> &numbers){
         strategy->sort(numbers);
     }
-}
+};
 
 
 
