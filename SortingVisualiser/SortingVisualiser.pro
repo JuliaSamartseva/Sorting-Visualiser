@@ -21,10 +21,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    painter.cpp \
     sortingalgorithms.cpp
 
 HEADERS += \
     mainwindow.h \
+    painter.h \
     sortingalgorithms.h
 
 FORMS += \
