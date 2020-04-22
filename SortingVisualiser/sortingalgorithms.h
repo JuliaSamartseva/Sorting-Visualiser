@@ -13,7 +13,7 @@ class QuickSort : public SortingStrategy
 {
     void sort(std::vector<int> &list) override;
     void quickSort(std::vector<int> &list, int low, int high);
-    int partition (std::vector<int> &list, int low, int high);
+
 };
 
 class MergeSort : public SortingStrategy
