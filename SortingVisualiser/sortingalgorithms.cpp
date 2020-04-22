@@ -2,35 +2,37 @@
 
 void swap(int* a, int* b);
 
+SortingStrategy::~SortingStrategy() {};
+
 void QuickSort::sort(std::vector<int> &list)
 {
     quickSort(list, 0, list.size()-1);
 }
 
-void QuickSort::quickSort(std::vector<int> &list, int low, int high)
+void QuickSort::quickSort(std::vector<int> &list, unsigned int low, unsigned int high)
 {
-    int i = low;
-        int j = high;
-        int pivot = list[(i + j) / 2];
-        int temp;
+    unsigned int i = low;
+    unsigned int j = high;
+    int pivot = list[(i + j) / 2];
+    int temp;
 
-        while (i <= j)
+    while (i <= j)
+    {
+        while (list[i] < pivot)
+            i++;
+        while (list[j] > pivot)
+            j--;
+        if (i <= j)
         {
-            while (list[i] < pivot)
-                i++;
-            while (list[j] > pivot)
-                j--;
-            if (i <= j)
-            {
-                swap(&list[i], &list[j]);
-                i++;
-                j--;
-            }
+            swap(&list[i], &list[j]);
+            i++;
+            j--;
         }
-        if (j > low)
-            quickSort(list, low, j);
-        if (i < high)
-            quickSort(list, i, high);
+    }
+    if (j > low)
+        quickSort(list, low, j);
+    if (i < high)
+        quickSort(list, i, high);
 }
 
 
@@ -40,11 +42,11 @@ void MergeSort::sort(std::vector<int> &list)
 }
 
 
- void MergeSort::mergeSort(std::vector<int> &list, int left, int right)
+ void MergeSort::mergeSort(std::vector<int> &list, unsigned int left, unsigned int right)
  {
      if (left < right)
          {
-             int middle = left+(right-left)/2;
+             unsigned int middle = left+(right-left)/2;
 
              mergeSort(list, left, middle);
              mergeSort(list, middle+1, right);
@@ -53,19 +55,19 @@ void MergeSort::sort(std::vector<int> &list)
          }
  }
 
-  void MergeSort::merge(std::vector<int> &list, int left, int middle, int right)
+  void MergeSort::merge(std::vector<int> &list, unsigned int left, unsigned int middle, unsigned int right)
   {
-      int n1 = middle - left + 1;
-      int n2 =  right - middle;
+      unsigned int n1 = middle - left + 1;
+      unsigned int n2 =  right - middle;
       std::vector<int>Left;
       std::vector<int>Right;
 
-      for (int i = 0; i < n1; i++)
+      for (unsigned int i = 0; i < n1; i++)
            Left.push_back(list[left + i]);
-      for (int j = 0; j < n2; j++)
+      for (unsigned int j = 0; j < n2; j++)
            Right.push_back(list[middle + 1+ j]);
 
-      int i=0, j=0, k=left;
+      unsigned int i=0, j=0, k=left;
 
       while (i < n1 && j < n2)
           {
@@ -98,7 +100,8 @@ void MergeSort::sort(std::vector<int> &list)
   }
 
   void InsertionSort::sort(std::vector<int> &list){
-      int i, key, j;
+      int i, j;
+      int key;
           for (i = 1; i < list.size(); i++)
           {
               key = list[i];
