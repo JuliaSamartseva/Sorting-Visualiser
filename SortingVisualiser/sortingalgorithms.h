@@ -44,15 +44,18 @@ private:
     SortingStrategy *strategy;
 
 public:
-    void setSortingMethod(SortingStrategy *strategy) {
+    void setSortingMethod(SortingStrategy *strategy)
+    {
         this->strategy = strategy;
     }
 
-    SortingStrategy* getStrategy() {
+    SortingStrategy* getStrategy()
+    {
         return strategy;
     }
 
-   void sortNumbers(std::vector<int> &numbers){
+   void sortNumbers(std::vector<int> &numbers)
+   {
         strategy->sort(numbers);
     }
 };
