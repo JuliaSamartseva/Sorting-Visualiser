@@ -9,32 +9,37 @@ public:
     virtual void sort(std::vector<int> &list) = 0;
 };
 
-class QuickSort : public SortingStrategy {
+class QuickSort : public SortingStrategy
+{
     void sort(std::vector<int> &list) override;
     void quickSort(std::vector<int> &list, int low, int high);
     int partition (std::vector<int> &list, int low, int high);
 };
 
-class MergeSort : public SortingStrategy {
+class MergeSort : public SortingStrategy
+{
     void sort(std::vector<int> &list) override;
     void mergeSort(std::vector<int> &list, int left, int right);
     void merge(std::vector<int> &list, int left, int middle, int right);
 };
 
-class InsertionSort : public SortingStrategy {
+class InsertionSort : public SortingStrategy
+{
     void sort(std::vector<int> &list) override;
 };
 
-class SelectionSort : public SortingStrategy {
+class SelectionSort : public SortingStrategy
+{
     void sort(std::vector<int> &list) override;
 };
 
-class CocktailSort : public SortingStrategy {
+class CocktailSort : public SortingStrategy
+{
     void sort(std::vector<int> &list) override;
 };
 
-class SortingContext {
-
+class SortingContext
+{
 private:
     SortingStrategy *strategy;
 
