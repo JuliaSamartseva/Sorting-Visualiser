@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <painter.h>
+#include <sortingalgorithms.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    SortingStrategy *strategy;
+    Painter paintwidget;
 };
 #endif // MAINWINDOW_H

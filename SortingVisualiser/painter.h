@@ -16,7 +16,7 @@ private:
     QPalette palette;
 
     QColor blockColor;
-    QColor backgroundColor;
+    QColor backgroundColor = Qt::white;
 
     bool animate;
     int penWidth;
@@ -25,8 +25,12 @@ private:
     std::vector<int> numbers;
     std::vector<int> indices;
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 public:
     explicit Painter(QWidget *parent = nullptr);
+    void setPaintData(std::vector<int> numbers, std::vector<int> indices);
 
     void setData(std::vector<int> numbers);
     QColor getBlockColor() const;
