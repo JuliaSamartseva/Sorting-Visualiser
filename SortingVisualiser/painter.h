@@ -32,7 +32,6 @@ public:
     explicit Painter(QWidget *parent = nullptr);
     void setPaintData(std::vector<int> numbers, std::vector<int> indices);
 
-    void setData(std::vector<int> numbers);
     QColor getBlockColor() const;
     void setBlockColor(const QColor &value);
     QColor getBackgroundColor() const;

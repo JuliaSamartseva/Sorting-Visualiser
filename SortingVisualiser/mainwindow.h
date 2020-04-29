@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <painter.h>
+#include <sortinganimation.h>
 #include <sortingalgorithms.h>
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,10 @@ public:
 private:
     Ui::MainWindow *ui;
     SortingStrategy *strategy;
+    SortingAnimation *sAnimation;
     Painter paintwidget;
+
+public slots:
+    void onNumbersChanged(std::vector<int>, std::vector<int>);
 };
 #endif // MAINWINDOW_H

@@ -22,12 +22,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     painter.cpp \
-    sortingalgorithms.cpp
+    sortingalgorithms.cpp \
+    sortinganimation.cpp
 
 HEADERS += \
     mainwindow.h \
     painter.h \
-    sortingalgorithms.h
+    sortingalgorithms.h \
+    sortinganimation.h
 
 FORMS += \
     mainwindow.ui

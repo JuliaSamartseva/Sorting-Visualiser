@@ -39,7 +39,7 @@ Painter::Painter(QWidget *parent)
     setPalette(palette);
     setAutoFillBackground(true);
     animate = false;
-    penWidth = 5;
+    penWidth = 10;
     this->pen = QPen(Qt::lightGray, penWidth, Qt::PenStyle::SolidLine, Qt::PenCapStyle::SquareCap, Qt::PenJoinStyle::BevelJoin);
 }
 
