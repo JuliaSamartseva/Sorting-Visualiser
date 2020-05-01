@@ -80,6 +80,11 @@ public:
         horizontalLayout->addLayout(verticalLayout_2);
 
         chooseAlgorithm = new QComboBox(horizontalLayoutWidget);
+        chooseAlgorithm->addItem(QString());
+        chooseAlgorithm->addItem(QString());
+        chooseAlgorithm->addItem(QString());
+        chooseAlgorithm->addItem(QString());
+        chooseAlgorithm->addItem(QString());
         chooseAlgorithm->setObjectName(QString::fromUtf8("chooseAlgorithm"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -130,6 +135,12 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         generateArray->setText(QApplication::translate("MainWindow", "Generate new array of size", nullptr));
+        chooseAlgorithm->setItemText(0, QApplication::translate("MainWindow", "Quick sort", nullptr));
+        chooseAlgorithm->setItemText(1, QApplication::translate("MainWindow", "Merge sort", nullptr));
+        chooseAlgorithm->setItemText(2, QApplication::translate("MainWindow", "Insertion sort", nullptr));
+        chooseAlgorithm->setItemText(3, QApplication::translate("MainWindow", "Selection sort", nullptr));
+        chooseAlgorithm->setItemText(4, QApplication::translate("MainWindow", "Cocktail sort", nullptr));
+
         startSort->setText(QApplication::translate("MainWindow", "Sort !", nullptr));
         labelSort->setText(QApplication::translate("MainWindow", "Sort speed", nullptr));
     } // retranslateUi

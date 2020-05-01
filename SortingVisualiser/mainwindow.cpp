@@ -8,12 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->painterLayout->addWidget(&paintwidget);
-    sAnimation = new SortingAnimation(this);
+    animation = new SortingAnimation(this);
 
-    connect(sAnimation, SIGNAL(NumbersChanged(std::vector<int>, std::vector<int>)),
+    connect(animation, SIGNAL(NumbersChanged(std::vector<int>, std::vector<int>)),
             this, SLOT(onNumbersChanged(std::vector<int>, std::vector<int>)));
 
-    sAnimation->generateNumbers(100);
+    animation->generateNumbers(100);
     paintwidget.update();
 }
 
@@ -28,3 +28,9 @@ void MainWindow::onNumbersChanged(std::vector<int> numbers, std::vector<int> ind
     paintwidget.update();
 }
 
+
+void MainWindow::on_generateArray_clicked()
+{
+    animation->generateNumbers(100);
+    paintwidget.update();
+}

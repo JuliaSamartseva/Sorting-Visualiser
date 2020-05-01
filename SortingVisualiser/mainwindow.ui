@@ -67,6 +67,31 @@
          <height>0</height>
         </size>
        </property>
+       <item>
+        <property name="text">
+         <string>Quick sort</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Merge sort</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Insertion sort</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Selection sort</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cocktail sort</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>

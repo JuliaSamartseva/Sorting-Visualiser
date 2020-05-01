@@ -20,11 +20,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    SortingStrategy *strategy;
-    SortingAnimation *sAnimation;
+    SortingAnimation *animation;
     Painter paintwidget;
 
 public slots:
     void onNumbersChanged(std::vector<int>, std::vector<int>);
+private slots:
+    void on_generateArray_clicked();
 };
 #endif // MAINWINDOW_H
