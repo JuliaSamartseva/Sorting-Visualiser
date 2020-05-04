@@ -1,0 +1,10 @@
+release/controller.o
+release/main.o
+release/mainwindow.o
+release/painter.o
+release/sortingalgorithms.o
+release/sortinganimation.o
+release/moc_controller.o
+release/moc_mainwindow.o
+release/moc_painter.o
+release/moc_sortinganimation.o

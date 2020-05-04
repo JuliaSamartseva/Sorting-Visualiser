@@ -42,9 +42,8 @@ class SortingContext
 {
 private:
     SortingStrategy *strategy;
-
 public:
-    void setSortingMethod(SortingStrategy *strategy)
+    void setStrategy(SortingStrategy *strategy)
     {
         this->strategy = strategy;
     }
@@ -57,7 +56,7 @@ public:
    void sortNumbers(std::vector<int> &numbers)
    {
         strategy->sort(numbers);
-    }
+   }
 };
 
 

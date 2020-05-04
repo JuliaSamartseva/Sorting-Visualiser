@@ -10,6 +10,11 @@ void Painter::setBackgroundColor(const QColor &value)
     backgroundColor = value;
 }
 
+std::vector<int> Painter::getNumbers() const
+{
+    return numbers;
+}
+
 void Painter::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
@@ -47,6 +52,11 @@ void Painter::setPaintData(std::vector<int> numbers, std::vector<int> indices)
 {
     this->numbers = numbers;
     this->indices = indices;
+}
+
+void Painter::setAnimation(bool animate)
+{
+    this->animate = animate;
 }
 
 QColor Painter::getBlockColor() const

@@ -1,0 +1,10 @@
+debug/controller.o
+debug/main.o
+debug/mainwindow.o
+debug/painter.o
+debug/sortingalgorithms.o
+debug/sortinganimation.o
+debug/moc_controller.o
+debug/moc_mainwindow.o
+debug/moc_painter.o
+debug/moc_sortinganimation.o

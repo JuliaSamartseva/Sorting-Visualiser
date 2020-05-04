@@ -13,6 +13,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(animation, SIGNAL(NumbersChanged(std::vector<int>, std::vector<int>)),
             this, SLOT(onNumbersChanged(std::vector<int>, std::vector<int>)));
 
+
+    //connect(ui->chooseAlgorithm, SIGNAL(currentTextChanged(QString)),
+    //        controller, SLOT(setSortingStrategyQString(QString)));
+
     animation->generateNumbers(100);
     paintwidget.update();
 }
@@ -33,4 +37,10 @@ void MainWindow::on_generateArray_clicked()
 {
     animation->generateNumbers(100);
     paintwidget.update();
+}
+
+void MainWindow::on_startSort_clicked()
+{
+    paintwidget.setAnimation(true);
+    controller->startSorting();
 }

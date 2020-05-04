@@ -1,6 +1,16 @@
 #include "sortinganimation.h"
 #include <QRandomGenerator>
 
+std::vector<int> SortingAnimation::getNumbers()
+{
+    return numbers;
+}
+
+void SortingAnimation::run()
+{
+    sorting->sortNumbers(numbers);
+}
+
 void SortingAnimation::swap(std::vector<int> &numbers, int i, int j)
 {
     int temp = numbers[i];
@@ -8,13 +18,12 @@ void SortingAnimation::swap(std::vector<int> &numbers, int i, int j)
     numbers[j] = temp;
 }
 
-SortingAnimation::SortingAnimation(QObject *parent) : QThread(parent)
-{
-}
+SortingAnimation::SortingAnimation(QObject *parent) : QThread(parent){}
 
 void SortingAnimation::generateNumbers(int size)
 {
     std::vector<int> result;
+    this->size = size;
 
     result.reserve(size);
 
@@ -29,5 +38,12 @@ void SortingAnimation::generateNumbers(int size)
         swap(result, i, rand);
     }
 
-    emit NumbersChanged(result, {0});
+    this->numbers = result;
+
+    emit NumbersChanged(numbers, {0});
+}
+
+void SortingAnimation::setSortingStrategy(SortingContext *sorting)
+{
+    this->sorting = sorting;
 }
