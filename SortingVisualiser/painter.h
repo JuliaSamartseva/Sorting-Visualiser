@@ -38,6 +38,8 @@ public:
     QColor getBackgroundColor() const;
     void setBackgroundColor(const QColor &value);
     std::vector<int> getNumbers() const;
+signals:
+    void NumbersChanged(std::vector<int>, std::vector<int>);
 };
 
 #endif // PAINTOR_H

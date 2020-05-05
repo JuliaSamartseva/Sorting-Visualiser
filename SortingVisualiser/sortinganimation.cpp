@@ -1,5 +1,6 @@
 #include "sortinganimation.h"
 #include <QRandomGenerator>
+#include <QDebug>
 
 std::vector<int> SortingAnimation::getNumbers()
 {
@@ -8,6 +9,7 @@ std::vector<int> SortingAnimation::getNumbers()
 
 void SortingAnimation::run()
 {
+    qDebug() << "ZASHLO";
     sorting->sortNumbers(numbers);
 }
 

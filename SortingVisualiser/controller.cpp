@@ -1,14 +1,27 @@
 #include "controller.h"
+#include <QDebug>
+
+void Controller::generateNumbers(int number)
+{
+    animation->generateNumbers(number);
+    paintwidget.update();
+}
+
+void Controller::setAnimation(SortingAnimation *value)
+{
+    animation = value;
+}
 
 Controller::Controller()
 {
-    setSortingStrategy("QuickSort"); //default
+    this->sorting = new SortingContext();
+    this->sorting->setStrategy(new QuickSort());
 }
 
-Controller::Controller(std::string strategy, SortingAnimation *animation)
+Controller::Controller(SortingAnimation *animation)
 {
-    setSortingStrategy(strategy);
     this->animation = animation;
+    this->sorting->setStrategy(new QuickSort());
 }
 
 void Controller::setSortingStrategy(std::string strategy)
@@ -26,11 +39,18 @@ void Controller::setSortingStrategy(std::string strategy)
 
 void Controller::startSorting()
 {
-    this->animation->setSortingStrategy(sorting);
-    this->animation->start();
+    paintwidget.setAnimation(true);
+    animation->setSortingStrategy(sorting);
+    animation->start();
 }
 
 void Controller::setSortingStrategyQString(QString input)
 {
     setSortingStrategy(input.toStdString());
+}
+
+void Controller::onNumbersChanged(std::vector<int> numbers, std::vector<int> indices)
+{
+    paintwidget.setPaintData(numbers, indices);
+    paintwidget.update();
 }

@@ -17,15 +17,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
 private:
     Ui::MainWindow *ui;
-    SortingAnimation *animation;
     Controller *controller;
-    Painter paintwidget;
+    SortingAnimation* animation;
 
-public slots:
-    void onNumbersChanged(std::vector<int>, std::vector<int>);
 private slots:
     void on_generateArray_clicked();
     void on_startSort_clicked();

@@ -5,6 +5,7 @@
 #include <sortingalgorithms.h>
 #include <sortinganimation.h>
 #include <string>
+#include <painter.h>
 
 
 class Controller : public QObject
@@ -13,13 +14,19 @@ class Controller : public QObject
 private:
     SortingContext *sorting;
     SortingAnimation* animation;
+    Painter paintwidget;
 public:
     Controller();
-    Controller(std::string strategy, SortingAnimation* animation);
+    Controller(SortingAnimation* animation);
     void setSortingStrategy(std::string strategy);
     void startSorting();
+    void generateNumbers(int number);
+    Painter* getPaintWidget() {return &paintwidget;}
+    void setAnimation(SortingAnimation *value);
+
 public slots:
     void setSortingStrategyQString(QString);
+    void onNumbersChanged(std::vector<int>, std::vector<int>);
 };
 
 #endif // CONTROLLER_H
