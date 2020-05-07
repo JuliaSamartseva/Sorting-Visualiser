@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->chooseAlgorithm, SIGNAL(currentTextChanged(QString)),
             controller, SLOT(setSortingStrategyQString(QString)));
 
-    controller->generateNumbers(100);
+    controller->generateNumbers(200);
 }
 
 MainWindow::~MainWindow()
@@ -31,7 +31,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_generateArray_clicked()
 {
-    controller->generateNumbers(100);
+    controller->generateNumbers(200);
 }
 
 void MainWindow::on_startSort_clicked()

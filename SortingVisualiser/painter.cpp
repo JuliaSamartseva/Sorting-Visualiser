@@ -16,9 +16,24 @@ std::vector<int> Painter::getNumbers() const
     return numbers;
 }
 
+int Painter::getPenWidth() const
+{
+    return penWidth;
+}
+
+void Painter::updatePenWidth()
+{
+    penWidth = this->width() / numbers.size();
+}
+
+void Painter::setPenWidth(double value)
+{
+    penWidth = value;
+    pen.setWidth(penWidth);
+}
+
 void Painter::paintEvent(QPaintEvent *event)
 {
-    qDebug() << "painting";
     QPainter painter(this);
 
     int iColor = 0;
@@ -30,13 +45,14 @@ void Painter::paintEvent(QPaintEvent *event)
 
         if (animate && (std::find(indices.begin(), indices.end(), i) != indices.end()))
         {
-            pen.setColor(Qt::green);
+            pen.setColor(Qt::yellow);
             painter.setPen(pen);
             ++iColor;
         }
+        double j = i + 0.5;
 
-        painter.drawLine((i-1)*penWidth, this->height(),
-                         (i-1)*penWidth, this->height() - numbers[i]);
+        painter.drawLine(j*penWidth, this->height(),
+                         j*penWidth, this->height() - numbers[i]);
     }
 }
 
@@ -45,13 +61,13 @@ Painter::Painter(QWidget *parent)
     palette.setColor(QPalette::Background,backgroundColor);
     setPalette(palette);
     setAutoFillBackground(true);
-    animate = false;
-    penWidth = 5;
     this->pen = QPen(Qt::lightGray, penWidth, Qt::PenStyle::SolidLine, Qt::PenCapStyle::SquareCap, Qt::PenJoinStyle::BevelJoin);
+    this->setFixedWidth(1024);
 }
 
 void Painter::setPaintData(std::vector<int> numbers, std::vector<int> indices)
 {
+
     this->numbers = numbers;
     this->indices = indices;
 }

@@ -14,10 +14,8 @@ void SortingAnimation::run()
 
 void SortingAnimation::update(std::vector<int> numbers, std::vector<int> indices)
 {
-    qDebug() << "started";
     emit NumbersChanged(numbers, indices);
     this->usleep(animationSpeed);
-    qDebug() << "finished";
 }
 
 void SortingAnimation::swap(std::vector<int> &numbers, int i, int j)
@@ -50,7 +48,7 @@ void SortingAnimation::generateNumbers(int size)
 
     this->numbers = result;
 
-    emit NumbersChanged(numbers, {0});
+    emit NumbersChanged(numbers, {});
 }
 
 void SortingAnimation::setSortingStrategy(SortingContext *sorting)

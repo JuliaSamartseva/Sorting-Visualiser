@@ -18,9 +18,8 @@ private:
     QColor blockColor;
     QColor backgroundColor = Qt::white;
 
-    bool animate;
-    int penWidth;
-    int spacing;
+    bool animate = false;
+    int penWidth = 5;
 
     std::vector<int> numbers;
     std::vector<int> indices;
@@ -38,6 +37,10 @@ public:
     QColor getBackgroundColor() const;
     void setBackgroundColor(const QColor &value);
     std::vector<int> getNumbers() const;
+    int getPenWidth() const;
+    void updatePenWidth();
+    void setPenWidth(double value);
+
 signals:
     void NumbersChanged(std::vector<int>, std::vector<int>);
 };

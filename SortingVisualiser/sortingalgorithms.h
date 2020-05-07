@@ -8,7 +8,7 @@ class SortingStrategy : public QObject
 {
     Q_OBJECT
 private:
-    int animationSpeed = 10000;
+    int animationSpeed = 1000;
 public:
     SortingStrategy() {
         qRegisterMetaType< std::vector<int>   >( "std::vector<int>"   ); //for thread

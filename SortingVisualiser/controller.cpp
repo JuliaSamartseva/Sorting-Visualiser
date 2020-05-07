@@ -3,8 +3,8 @@
 
 void Controller::generateNumbers(int number)
 {
+    paintwidget.setPenWidth(paintwidget.width() / number);
     animation->generateNumbers(number);
-    paintwidget.update();
 }
 
 void Controller::setAnimation(SortingAnimation *value)
@@ -53,7 +53,6 @@ void Controller::setSortingStrategyQString(QString input)
 
 void Controller::onNumbersChanged(std::vector<int> numbers, std::vector<int> indices)
 {
-    qDebug() << "Got signal";
     paintwidget.setPaintData(numbers, indices);
     paintwidget.repaint();
 }
