@@ -7,4 +7,5 @@ debug/sortinganimation.o
 debug/moc_controller.o
 debug/moc_mainwindow.o
 debug/moc_painter.o
+debug/moc_sortingalgorithms.o
 debug/moc_sortinganimation.o

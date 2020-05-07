@@ -9,8 +9,15 @@ std::vector<int> SortingAnimation::getNumbers()
 
 void SortingAnimation::run()
 {
-    qDebug() << "ZASHLO";
     sorting->sortNumbers(numbers);
+}
+
+void SortingAnimation::update(std::vector<int> numbers, std::vector<int> indices)
+{
+    qDebug() << "started";
+    emit NumbersChanged(numbers, indices);
+    this->usleep(animationSpeed);
+    qDebug() << "finished";
 }
 
 void SortingAnimation::swap(std::vector<int> &numbers, int i, int j)
@@ -20,7 +27,8 @@ void SortingAnimation::swap(std::vector<int> &numbers, int i, int j)
     numbers[j] = temp;
 }
 
-SortingAnimation::SortingAnimation(QObject *parent) : QThread(parent){}
+SortingAnimation::SortingAnimation(QObject *parent) : QThread(parent){
+}
 
 void SortingAnimation::generateNumbers(int size)
 {

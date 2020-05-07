@@ -1,4 +1,5 @@
 #include "painter.h"
+#include <QDebug>
 
 QColor Painter::getBackgroundColor() const
 {
@@ -17,6 +18,7 @@ std::vector<int> Painter::getNumbers() const
 
 void Painter::paintEvent(QPaintEvent *event)
 {
+    qDebug() << "painting";
     QPainter painter(this);
 
     int iColor = 0;

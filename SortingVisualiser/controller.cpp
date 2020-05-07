@@ -41,6 +41,8 @@ void Controller::startSorting()
 {
     paintwidget.setAnimation(true);
     animation->setSortingStrategy(sorting);
+    connect(sorting->getStrategy(), SIGNAL(NumbersChanged(std::vector<int>, std::vector<int>)),
+            animation, SLOT(update(std::vector<int>, std::vector<int>)));
     animation->start();
 }
 
@@ -51,6 +53,7 @@ void Controller::setSortingStrategyQString(QString input)
 
 void Controller::onNumbersChanged(std::vector<int> numbers, std::vector<int> indices)
 {
+    qDebug() << "Got signal";
     paintwidget.setPaintData(numbers, indices);
-    paintwidget.update();
+    paintwidget.repaint();
 }

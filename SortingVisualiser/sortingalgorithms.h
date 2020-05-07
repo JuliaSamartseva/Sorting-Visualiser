@@ -1,26 +1,37 @@
 #ifndef SORTINGALGORITHMS_H
 #define SORTINGALGORITHMS_H
 #include <vector>
+#include <QObject>
+#include <QTimer>
 
-class SortingStrategy
+class SortingStrategy : public QObject
 {
+    Q_OBJECT
+private:
+    int animationSpeed = 10000;
 public:
+    SortingStrategy() {
+        qRegisterMetaType< std::vector<int>   >( "std::vector<int>"   ); //for thread
+    }
     virtual void sort(std::vector<int> &list) = 0;
     virtual ~SortingStrategy() = 0;
+    void update(std::vector<int> numbers, std::vector<int> indices);
+signals:
+    void NumbersChanged(std::vector<int>, std::vector<int>);
 };
 
 class QuickSort : public SortingStrategy
 {
     void sort(std::vector<int> &list) override;
-    void quickSort(std::vector<int> &list, unsigned int low, unsigned int high);
+    void quickSort(std::vector<int> &list, int low, int high);
 
 };
 
 class MergeSort : public SortingStrategy
 {
     void sort(std::vector<int> &list) override;
-    void mergeSort(std::vector<int> &list, unsigned int left, unsigned int right);
-    void merge(std::vector<int> &list, unsigned int left, unsigned int middle, unsigned int right);
+    void mergeSort(std::vector<int> &list, int left, int right);
+    void merge(std::vector<int> &list, int left, int middle, int right);
 };
 
 class InsertionSort : public SortingStrategy
