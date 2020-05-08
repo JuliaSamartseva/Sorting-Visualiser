@@ -25,6 +25,8 @@ public:
     void setSortingStrategy(SortingContext* sorting);
     std::vector<int> getNumbers();
     void run() override;
+    void setAnimationSpeed(int value);
+
 signals:
     void NumbersChanged(std::vector<int>, std::vector<int>);
 public slots:

@@ -78,11 +78,13 @@ void MergeSort::sort(std::vector<int> &list)
               if (Left[i] <= Right[j])
               {
                   list[k] = Left[i];
+                  update(list, {k});
                   i++;
               }
               else
               {
                   list[k] = Right[j];
+                  update(list, {k});
                   j++;
               }
               k++;
@@ -117,6 +119,7 @@ void MergeSort::sort(std::vector<int> &list)
                   j = j - 1;
               }
               list[j + 1] = key;
+              update(list, {j+1});
           }
   }
 
@@ -132,6 +135,7 @@ void MergeSort::sort(std::vector<int> &list)
                  min_idx = j;
 
              swap(&list[min_idx], &list[i]);
+             update(list, {min_idx, i});
          }
   }
 
@@ -147,6 +151,7 @@ void MergeSort::sort(std::vector<int> &list)
              for (int i = start; i < end; ++i) {
                  if (list[i] > list[i + 1]) {
                      swap(&list[i], &list[i + 1]);
+                     update(list, {i, i+1});
                      swapped = true;
                  }
              }
@@ -161,6 +166,7 @@ void MergeSort::sort(std::vector<int> &list)
              for (int i = end - 1; i >= start; --i) {
                  if (list[i] > list[i + 1]) {
                      swap(&list[i], &list[i + 1]);
+                     update(list, {i, i+1});
                      swapped = true;
                  }
              }

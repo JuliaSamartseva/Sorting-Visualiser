@@ -20,7 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->chooseAlgorithm, SIGNAL(currentTextChanged(QString)),
             controller, SLOT(setSortingStrategyQString(QString)));
 
-    controller->generateNumbers(200);
+    controller->generateNumbers(ui->arraySize->value());
+    controller->changeAnimationSpeed(ui->sortSpeed->value());
 }
 
 MainWindow::~MainWindow()
@@ -31,10 +32,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_generateArray_clicked()
 {
-    controller->generateNumbers(200);
+    controller->generateNumbers(ui->arraySize->value());
 }
 
 void MainWindow::on_startSort_clicked()
 {
     controller->startSorting();
+}
+
+void MainWindow::on_arraySize_valueChanged(int value)
+{
+    controller->changeArraySize(value);
+}
+
+void MainWindow::on_sortSpeed_valueChanged(int value)
+{
+    controller->changeAnimationSpeed(value);
 }

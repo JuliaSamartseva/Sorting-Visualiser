@@ -25,5 +25,7 @@ private:
 private slots:
     void on_generateArray_clicked();
     void on_startSort_clicked();
+    void on_arraySize_valueChanged(int value);
+    void on_sortSpeed_valueChanged(int value);
 };
 #endif // MAINWINDOW_H

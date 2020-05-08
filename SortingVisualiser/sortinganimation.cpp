@@ -18,6 +18,11 @@ void SortingAnimation::update(std::vector<int> numbers, std::vector<int> indices
     this->usleep(animationSpeed);
 }
 
+void SortingAnimation::setAnimationSpeed(int value)
+{
+    animationSpeed = value;
+}
+
 void SortingAnimation::swap(std::vector<int> &numbers, int i, int j)
 {
     int temp = numbers[i];

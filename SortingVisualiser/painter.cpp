@@ -49,7 +49,7 @@ void Painter::paintEvent(QPaintEvent *event)
             painter.setPen(pen);
             ++iColor;
         }
-        double j = i + 0.5;
+        double j = i + penWidth/2;
 
         painter.drawLine(j*penWidth, this->height(),
                          j*penWidth, this->height() - numbers[i]);

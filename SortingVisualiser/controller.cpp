@@ -12,6 +12,16 @@ void Controller::setAnimation(SortingAnimation *value)
     animation = value;
 }
 
+void Controller::changeArraySize(int value)
+{
+    generateNumbers(value);
+}
+
+void Controller::changeAnimationSpeed(int value)
+{
+   animation->setAnimationSpeed(value);
+}
+
 Controller::Controller()
 {
     this->sorting = new SortingContext();

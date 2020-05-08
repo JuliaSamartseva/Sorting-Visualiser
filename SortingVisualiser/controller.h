@@ -23,6 +23,8 @@ public:
     void generateNumbers(int number);
     Painter* getPaintWidget() {return &paintwidget;}
     void setAnimation(SortingAnimation *value);
+    void changeArraySize(int value);
+    void changeAnimationSpeed(int value);
 
 public slots:
     void setSortingStrategyQString(QString);

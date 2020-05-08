@@ -72,6 +72,9 @@ public:
 
         arraySize = new QSlider(horizontalLayoutWidget);
         arraySize->setObjectName(QString::fromUtf8("arraySize"));
+        arraySize->setMinimum(20);
+        arraySize->setMaximum(200);
+        arraySize->setSliderPosition(100);
         arraySize->setOrientation(Qt::Horizontal);
 
         verticalLayout_2->addWidget(arraySize);
@@ -113,6 +116,9 @@ public:
 
         sortSpeed = new QSlider(verticalLayoutWidget);
         sortSpeed->setObjectName(QString::fromUtf8("sortSpeed"));
+        sortSpeed->setMinimum(100);
+        sortSpeed->setMaximum(10000);
+        sortSpeed->setSliderPosition(5000);
         sortSpeed->setOrientation(Qt::Vertical);
 
         verticalLayout->addWidget(sortSpeed);
