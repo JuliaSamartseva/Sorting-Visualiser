@@ -21,6 +21,8 @@ private:
     bool animate = false;
     int penWidth = 5;
 
+    bool sorted = false;
+
     std::vector<int> numbers;
     std::vector<int> indices;
 
@@ -40,6 +42,8 @@ public:
     int getPenWidth() const;
     void updatePenWidth();
     void setPenWidth(double value);
+    bool getSorted() const;
+    void setSorted(bool value);
 
 signals:
     void NumbersChanged(std::vector<int>, std::vector<int>);

@@ -3,6 +3,7 @@
 
 void Controller::generateNumbers(int number)
 {
+    paintwidget.setSorted(false);
     paintwidget.setPenWidth(paintwidget.width() / number);
     animation->generateNumbers(number);
 }
@@ -49,11 +50,14 @@ void Controller::setSortingStrategy(std::string strategy)
 
 void Controller::startSorting()
 {
-    paintwidget.setAnimation(true);
-    animation->setSortingStrategy(sorting);
-    connect(sorting->getStrategy(), SIGNAL(NumbersChanged(std::vector<int>, std::vector<int>)),
-            animation, SLOT(update(std::vector<int>, std::vector<int>)));
-    animation->start();
+    if (!paintwidget.getSorted()) {
+        paintwidget.setAnimation(true);
+        animation->setSortingStrategy(sorting);
+        connect(sorting->getStrategy(), SIGNAL(NumbersChanged(std::vector<int>, std::vector<int>)),
+                animation, SLOT(update(std::vector<int>, std::vector<int>)));
+        animation->start();
+        paintwidget.setSorted(true);
+    }
 }
 
 void Controller::setSortingStrategyQString(QString input)

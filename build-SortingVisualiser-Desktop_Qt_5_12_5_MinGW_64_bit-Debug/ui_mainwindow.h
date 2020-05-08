@@ -120,6 +120,7 @@ public:
         sortSpeed->setMaximum(10000);
         sortSpeed->setSliderPosition(5000);
         sortSpeed->setOrientation(Qt::Vertical);
+        sortSpeed->setInvertedAppearance(true);
 
         verticalLayout->addWidget(sortSpeed);
 

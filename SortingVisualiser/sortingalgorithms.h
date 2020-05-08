@@ -11,7 +11,7 @@ private:
     int animationSpeed = 1000;
 public:
     SortingStrategy() {
-        qRegisterMetaType< std::vector<int>   >( "std::vector<int>"   ); //for thread
+        qRegisterMetaType< std::vector<int>   >( "std::vector<int>"   ); //for thread queue
     }
     virtual void sort(std::vector<int> &list) = 0;
     virtual ~SortingStrategy() = 0;

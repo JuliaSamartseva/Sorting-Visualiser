@@ -32,6 +32,16 @@ void Painter::setPenWidth(double value)
     pen.setWidth(penWidth);
 }
 
+bool Painter::getSorted() const
+{
+    return sorted;
+}
+
+void Painter::setSorted(bool value)
+{
+    sorted = value;
+}
+
 void Painter::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
@@ -49,7 +59,7 @@ void Painter::paintEvent(QPaintEvent *event)
             painter.setPen(pen);
             ++iColor;
         }
-        double j = i + penWidth/2;
+        double j = i + 0.5;
 
         painter.drawLine(j*penWidth, this->height(),
                          j*penWidth, this->height() - numbers[i]);
