@@ -16,7 +16,7 @@ std::vector<int> Painter::getNumbers() const
     return numbers;
 }
 
-int Painter::getPenWidth() const
+double Painter::getPenWidth() const
 {
     return penWidth;
 }
@@ -72,7 +72,7 @@ Painter::Painter(QWidget *parent)
     setPalette(palette);
     setAutoFillBackground(true);
     this->pen = QPen(Qt::lightGray, penWidth, Qt::PenStyle::SolidLine, Qt::PenCapStyle::SquareCap, Qt::PenJoinStyle::BevelJoin);
-    this->setFixedWidth(1024);
+    this->setFixedWidth(1124);
 }
 
 void Painter::setPaintData(std::vector<int> numbers, std::vector<int> indices)

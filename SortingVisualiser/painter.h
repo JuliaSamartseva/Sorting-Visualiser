@@ -19,7 +19,7 @@ private:
     QColor backgroundColor = Qt::white;
 
     bool animate = false;
-    int penWidth = 5;
+    double penWidth = 5;
 
     bool sorted = false;
 
@@ -39,7 +39,7 @@ public:
     QColor getBackgroundColor() const;
     void setBackgroundColor(const QColor &value);
     std::vector<int> getNumbers() const;
-    int getPenWidth() const;
+    double getPenWidth() const;
     void updatePenWidth();
     void setPenWidth(double value);
     bool getSorted() const;

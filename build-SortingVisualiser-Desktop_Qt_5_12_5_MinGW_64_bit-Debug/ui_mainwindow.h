@@ -48,18 +48,22 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1118, 704);
+        MainWindow->resize(1248, 772);
+        QFont font;
+        font.setFamily(QString::fromUtf8("Yu Gothic Light"));
+        font.setPointSize(10);
+        MainWindow->setFont(font);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(91, 79, 1021, 561));
+        layoutWidget->setGeometry(QRect(91, 79, 1151, 631));
         painterLayout = new QHBoxLayout(layoutWidget);
         painterLayout->setObjectName(QString::fromUtf8("painterLayout"));
         painterLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayoutWidget = new QWidget(centralwidget);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 0, 1101, 81));
+        horizontalLayoutWidget->setGeometry(QRect(10, 0, 1231, 81));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -105,14 +109,14 @@ public:
 
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(9, 79, 81, 561));
+        verticalLayoutWidget->setGeometry(QRect(9, 79, 82, 631));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         labelSort = new QLabel(verticalLayoutWidget);
         labelSort->setObjectName(QString::fromUtf8("labelSort"));
 
-        verticalLayout->addWidget(labelSort);
+        verticalLayout->addWidget(labelSort, 0, Qt::AlignHCenter);
 
         sortSpeed = new QSlider(verticalLayoutWidget);
         sortSpeed->setObjectName(QString::fromUtf8("sortSpeed"));
@@ -122,12 +126,12 @@ public:
         sortSpeed->setOrientation(Qt::Vertical);
         sortSpeed->setInvertedAppearance(true);
 
-        verticalLayout->addWidget(sortSpeed);
+        verticalLayout->addWidget(sortSpeed, 0, Qt::AlignHCenter);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1118, 26));
+        menubar->setGeometry(QRect(0, 0, 1248, 28));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

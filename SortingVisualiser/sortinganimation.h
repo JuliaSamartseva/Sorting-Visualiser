@@ -13,7 +13,7 @@ private:
     QObject *parent;
     int numberMin = 10;
     int numberMax = 500;
-    int animationSpeed = 30000;
+    int animationSpeed;
     std::vector<int> numbers;
     SortingContext *sorting;
     int size;

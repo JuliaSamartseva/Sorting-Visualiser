@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     animation = new SortingAnimation(this);
     controller = new Controller();
     controller->setAnimation(animation);

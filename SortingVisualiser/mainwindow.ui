@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1118</width>
-    <height>704</height>
+    <width>1248</width>
+    <height>772</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Yu Gothic Light</family>
+    <pointsize>10</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -19,8 +25,8 @@
      <rect>
       <x>91</x>
       <y>79</y>
-      <width>1021</width>
-      <height>561</height>
+      <width>1151</width>
+      <height>631</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="painterLayout"/>
@@ -30,7 +36,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>1101</width>
+      <width>1231</width>
       <height>81</height>
      </rect>
     </property>
@@ -117,19 +123,19 @@
      <rect>
       <x>9</x>
       <y>79</y>
-      <width>81</width>
-      <height>561</height>
+      <width>82</width>
+      <height>631</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
+     <item alignment="Qt::AlignHCenter">
       <widget class="QLabel" name="labelSort">
        <property name="text">
         <string>Sort speed</string>
        </property>
       </widget>
      </item>
-     <item>
+     <item alignment="Qt::AlignHCenter">
       <widget class="QSlider" name="sortSpeed">
        <property name="minimum">
         <number>100</number>
@@ -156,8 +162,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1118</width>
-     <height>26</height>
+     <width>1248</width>
+     <height>28</height>
     </rect>
    </property>
   </widget>
