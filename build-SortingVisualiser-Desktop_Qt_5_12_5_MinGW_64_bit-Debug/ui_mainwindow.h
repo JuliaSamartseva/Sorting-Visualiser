@@ -131,7 +131,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1248, 28));
+        menubar->setGeometry(QRect(0, 0, 1248, 17));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -153,7 +153,7 @@ public:
         chooseAlgorithm->setItemText(4, QApplication::translate("MainWindow", "Cocktail sort", nullptr));
 
         startSort->setText(QApplication::translate("MainWindow", "Sort !", nullptr));
-        labelSort->setText(QApplication::translate("MainWindow", "Sort speed", nullptr));
+        labelSort->setText(QApplication::translate("MainWindow", "Speed", nullptr));
     } // retranslateUi
 
 };
