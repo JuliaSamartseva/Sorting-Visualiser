@@ -22,8 +22,8 @@ TEST(test002,Quick_sort2){
 }
 
 TEST(test003,Quick_sort3){
-    std::vector<int> example_3{4, 5, 6, 7, 8, 9};
-    std::vector<int> expected{4, 5, 6, 7, 8, 9};
+    std::vector<int> example_3{4, 5, 6, 7, 8, 9,10,11,12};
+    std::vector<int> expected{4, 5, 6, 7, 8, 9, 10, 11, 12};
     SortingContext quick_s;
     quick_s.setStrategy(new QuickSort());
     quick_s.sortNumbers(example_3);
