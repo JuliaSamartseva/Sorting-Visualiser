@@ -45,6 +45,14 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QPushButton" name="generateArray">
+         <property name="font">
+          <font>
+           <family>Yu Gothic Light</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="text">
           <string>Generate new array of size</string>
          </property>
@@ -111,6 +119,14 @@
      </item>
      <item>
       <widget class="QPushButton" name="startSort">
+       <property name="font">
+        <font>
+         <family>Yu Gothic Light</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Sort !</string>
        </property>
