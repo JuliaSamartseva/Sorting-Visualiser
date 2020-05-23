@@ -23,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     controller->generateNumbers(ui->arraySize->value());
     controller->changeAnimationSpeed(ui->sortSpeed->value());
+
+    setMinimumSize(1250,750);
+    resize(1250,750);
 }
 
 MainWindow::~MainWindow()
