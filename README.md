@@ -14,16 +14,3 @@ Using strategy pattern to represent different sorting algorithms and work with t
 * **Observer pattern**
 
 Using signal-slot mechanism in QT as an observer pattern to track changes in the array during the process of sorting to update the UI.
-
-* **Singletone pattern**
-
-Coming soon
-
-## Authors
-* [**Samartseva Yuliia**](https://github.com/JuliaSamartseva)
-* [**Montag Marina**](https://github.com/MarinaMontag)
-* [**Mazur Darina**](https://github.com/darinamazur)
-
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
